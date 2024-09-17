@@ -1,0 +1,104 @@
+nest -v / nest --version
+    Obtenes la version instalada de nest
+nest
+    Lista todos los comandos que se pueden usar en este framework
+<control> C
+    Corta y borra lo que estamos corriendo en la terminal
+nest new my-first-app-nest
+    Crea un proyecto con el nombre "my-first-app-nest"
+npm start
+    Corre el proyecto en el localhost 3000
+npm run start:dev
+    Ejecuta en modo desarrollo, en tiemop real cada cambio que hagamos se va a ver reflejado en el localhost 3000
+npm run build
+    Convierte todo el codigo ya desarrollado en una carpeta "dist", que es el que se ejecuta en produccion
+npm lint
+    Busca errores en todo el proyecto en tiempo real
+nest generate --help / nest g --help
+    comandos de ayuda para poder ejecutar
+nest generate module projects / nest generate mo projects / nest g mo projects
+    Crea un modulo y lo une a los otros archivos y lo anida al app.module
+nest generate controller hello / nest ge
+    crea una carpeta controller con el nombre hello con un controller y un spec y lo anida al app.module
+nest g service users / nest generate service users / nest g s users
+    Crea 2 archivos "users.service.spec.ts" y "users.service.ts"
+nest g service auth --no- spec / nest generate service auth --no- spec / nest g s auth --no- spec
+    Crea el archivo "auth.service.ts" pero no el "spec"s
+nest generate pipe hello/pipes/validateuser / nest g pipe hello/pipes/validateuser
+    dentro de hello, crea una carpeta que se llama pipes y dentro de ella crea un "validateuser" y su spec
+    en este archivo crea una clase con un transform, espera un valor, que es el quevamos a pasarle el objeto y una propiedad metadata que recibe informacion
+nest g guard /hello/guards/auth
+    dentro de hello, crea una carpeta que se llama guards y dentro de ella crea un "auth.guard" y su spec
+    Nos permite ver informacion
+nest g middleware users/logger
+    dentro de users, crea una carpeta que se llama logger.middleware y dentro de ella crea un "auth.guard" y su spec
+nest resource payments --> REST API
+    Crea una carpeta llamada payments con todos los recursos (controller, module, service, create-payment.dto, update-payment.dto y un payment.entity (este ultimo indica la interaz que necesita))
+
+
+
+
+
+Estructura del proyecto
+
+Carpeta dist
+    Es para que podamos poner todo el codigo convertido de Typescript a Javascript
+
+.eslintrc.js
+    Sirve para poder tener reglas de linting, donde subraye y me diga donde haya errores en mi codigo y como solucionarlos
+.prettierrc
+    Sirve para que podamos configurar como ordenar el codigo o formatear el codigo
+nest-cli.json
+    Configuracion interna de nest. En el caso de que querramos configurar algo interno si se usa
+tsconfig.build.json
+    Reglas adicionales de construccion en produccion
+    Sirve para poder colocar archivos de configuracion de typescript.
+tsconfig.json
+    Sirve para poder configurar la base de nuestro typescript
+
+
+
+
+
+
+
+
+
+
+
+Accesibilidad
+
+Command p
+    Habre el buscador de archivos de Visual Studio Code
+Command Mayus P
+    Habre el buscador de ajustes de Visual Studio Code
+
+
+TAREAS
+
+- definir stack
+    - backend
+        - nest
+    - frontend
+        -
+    - tecnologias
+        -
+    - lenguajes
+        - nodeJs
+    - herramientas
+        -
+
+cambiar nombre task por products y modificar archivos
+    - get
+    - post
+    - delete
+    - patch
+
+
+Crear una tabla de base de datos para productos
+
+
+Camino de archivos
+
+service - controller
+module importa los dos
