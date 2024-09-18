@@ -11,20 +11,18 @@ model Product {
   id          Int       @id @default(autoincrement())
   name        String    @unique
   description String
+  color       String?
+  category    String?
+  dimensions  String?
+  currency    String?
+  quantity    Int?
   price       Float
   image       String
   createdAt   DateTime  @default(now())
   updatedAt   DateTime  @updatedAt
-  // category     String
-  // dimensions   String
-  // color        String
-  // currency     String
-  // quantity     Int
   // available    Boolean
-  // featured     String
+  // featured     String (PREGUNTAR A ALEX (no se para que serviria))
   // creationUser String
-  // creationDate String
-  // updateDate   String
   // deletionDate String
   // deleted      Boolean
 }

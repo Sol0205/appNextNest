@@ -72,33 +72,3 @@ Command p
     Habre el buscador de archivos de Visual Studio Code
 Command Mayus P
     Habre el buscador de ajustes de Visual Studio Code
-
-
-TAREAS
-
-- definir stack
-    - backend
-        - nest
-    - frontend
-        -
-    - tecnologias
-        -
-    - lenguajes
-        - nodeJs
-    - herramientas
-        -
-
-cambiar nombre task por products y modificar archivos
-    - get
-    - post
-    - delete
-    - patch
-
-
-Crear una tabla de base de datos para productos
-
-
-Camino de archivos
-
-service - controller
-module importa los dos
