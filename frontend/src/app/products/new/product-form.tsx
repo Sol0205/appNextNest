@@ -13,6 +13,12 @@ export default function ProductForm({product}: any) {
         defaultValues:{
             name: product?.name,
             description: product?.description,
+            color: product?.color,
+            category: product?.category,
+            dimensions: product?.dimensions,
+            currency: product?.currency,
+            // ERROR!! (No me deja agregarlo)
+            // quantity: product?.quantity,
             price: product?.price,
             image: product?.image
         }
@@ -47,6 +53,31 @@ export default function ProductForm({product}: any) {
             <Input 
                 {...register('description')}
             />
+
+            <Label> Color </Label>
+            <Input 
+                {...register('color')}
+            />
+
+            <Label> Category </Label>
+            <Input 
+                {...register('category')}
+            />
+
+            <Label> Dimensions </Label>
+            <Input 
+                {...register('dimensions')}
+            />
+
+            <Label> Currency </Label>
+            <Input 
+                {...register('currency')}
+            />
+                
+            {/* <Label> Quantity </Label>
+            <Input 
+                {...register('quantity')}
+            /> */}
 
             <Label> Price </Label>
             <Input type='number' 

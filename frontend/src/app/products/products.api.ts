@@ -14,7 +14,6 @@ export async function getProduct(id: string) {
     return await data.json()
 }
 
-//ERROR LINE 19
 export async function createProduct(productData: any) {
     const res = await fetch(`${BACKEND_URL}/api/products`, {
         method: 'POST',

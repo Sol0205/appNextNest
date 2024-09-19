@@ -2,7 +2,6 @@ import Link from "next/link";
 import { buttonVariants } from '@/components/ui/button'
 import { getProducts } from "./products/products.api";
 import { ProductCard } from '@/components/product-card'
-import { CardTitle } from "@/components/ui/card";
 
 export const dynamic = "force-dynamic"
 
