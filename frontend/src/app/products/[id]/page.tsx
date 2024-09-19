@@ -27,9 +27,13 @@ async function ProductDetailPage({ params }: Props) {
                     </CardTitle>
                 </CardHeader>
                 <CardContent>
-                    <h1>{product.name}</h1>
-                    <p>{product.description}</p>
-                    <p>{product.price}</p>
+                    <h1>Nombre: {product.name}</h1>
+                    <p>Descripcion: {product.description}</p>
+                    <p>Color: {product.color}</p>
+                    <p>Categoria: {product.category}</p>
+                    <p>Medidas: {product.dimensions}</p>
+                    <p>Moneda en la que cobra: {product.currency}</p>
+                    <p>Precio: ${product.price} </p>
                     <img src={product.image} alt="" 
                         className="w-full h-64 object-cover"
                     />
