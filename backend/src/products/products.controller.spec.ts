@@ -13,6 +13,7 @@ interface CreateProductDto {
   quantity: number
   image: string
 }
+//contiene los datos que se requieren para crear un producto.
 
 interface Product {
   id: number
@@ -28,10 +29,12 @@ interface Product {
   createdAt: Date
   updatedAt: Date
 }
+//estructura completa del producto, incluyendo id, fechas de creación y actualización.
 
 
 describe('ProductsController', () => {
   let controller: ProductsController;
+  //Define un grupo de pruebas para ProductsController. Se declara una variable controller para guardar la instancia del controlador que se va a probar.
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
@@ -40,11 +43,13 @@ describe('ProductsController', () => {
     }).compile();
 
     controller = module.get<ProductsController>(ProductsController);
+    //Se crea un entorno de prueba, se compila el módulo de prueba con el controlador y los servicios necesarios (ProductsService y PrismaService), y se asigna la instancia del controlador a la variable controller.
   });
 
   it('should be defined', () => {
     expect(controller).toBeDefined();
   });
+  //Verifica que el controlador esté correctamente definido, es decir, que se haya creado y esté listo para ser usado.
 
   it('should create a product', async () => {
     const createProductDto: CreateProductDto = {
@@ -70,6 +75,7 @@ describe('ProductsController', () => {
 
     expect(await controller.create(createProductDto)).toBe(result);
   });
+  //Simula la creación de un producto utilizando un DTO de producto de prueba. Se finge que el servicio de productos (productsService) crea el producto correctamente, y se verifica que el controlador devuelva el resultado esperado.
 
   it('should return an array of products', async () => {
     const result: Product[] = [{
@@ -91,6 +97,7 @@ describe('ProductsController', () => {
 
     expect(await controller.findAll()).toBe(result);
   });
+  //Simula la obtención de todos los productos. Se verifica que el controlador retorne un array con los productos esperados.
 
   it('should return a single product', async () => {
     const result: Product = {
@@ -112,6 +119,7 @@ describe('ProductsController', () => {
 
     expect(await controller.findOne('1')).toBe(result);
   });
+  //Simula la obtención de un solo producto mediante un ID. Se comprueba que el controlador retorne el producto correcto.
 
   it('should update a product', async () => {
     const updateProductDto = { name: 'Updated Product', price: 150 };
@@ -133,6 +141,7 @@ describe('ProductsController', () => {
 
     expect(await controller.update('1', updateProductDto)).toBe(result);
   });
+  //Simula la actualización de un producto mediante un ID y un DTO de actualización. Se verifica que el controlador devuelva el producto actualizado.
 
   it('should remove a product', async () => {
     const result: Product = {
@@ -154,4 +163,5 @@ describe('ProductsController', () => {
 
     expect(await controller.remove('1')).toBe(result);
   });
+  //Simula la eliminación de un producto mediante un ID. Se comprueba que el controlador retorne el producto que fue eliminado.
 });
