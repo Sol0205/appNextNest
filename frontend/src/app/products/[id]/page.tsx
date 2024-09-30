@@ -34,7 +34,7 @@ async function ProductDetailPage({ params }: Props) {
                     <p>Medidas: {product.dimensions}</p>
                     <p>Moneda en la que cobra: {product.currency}</p>
                     <p>Precio: ${product.price} </p>
-                    <img src={product.image} alt="" 
+                    <img src={product.image} alt=""
                         className="w-full h-64 object-cover"
                     />
                 </CardContent>
