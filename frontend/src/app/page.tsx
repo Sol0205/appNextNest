@@ -23,7 +23,7 @@ async function HomePage() {
 
         <Link href="admin/products"
           className={buttonVariants()}>
-          Administrador
+          Manage products
         </Link>
       </div>
 
