@@ -22,7 +22,7 @@ export function ProductCard({ product }: any) {
       <img
         src={product.image}
         className='image'
-        alt="Aca va una foto referida al producto"
+        alt="Here is a photo referring to the product"
       />
 
       <CardContent>

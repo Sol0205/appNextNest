@@ -49,17 +49,6 @@ export default function ProductsPage() {
                 Create Product
             </Link>
 
-
-
-
-            <Link href="/admin/products/1"
-                className={buttonVariants()}>
-                Boton para ir al detalle del producto
-            </Link>
-
-
-
-
             <Table aria-label="Products List Table" className="custom-table">
                 <TableHeader>
                     <TableColumn className="custom-header">Name</TableColumn>
