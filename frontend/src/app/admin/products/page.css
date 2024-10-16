@@ -1,0 +1,27 @@
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.custom-header {
+    background-color: #d0d0d0;
+    text-align: center;
+    border-bottom: 1px solid #c4c4c4;
+    border: 1px solid #c4c4c4;
+}
+
+.custom-cell {
+    text-align: center;
+    border-bottom: 1px solid #c4c4c4;
+    border: 1px solid #c4c4c4;
+}
+
+.buttonEdit {
+    border-radius: 8px;
+    background-color: #f5a524;
+}
+
+.buttonDelete {
+    border-radius: 8px;
+    background-color: #ff0000;
+}

@@ -21,7 +21,7 @@ async function HomePage() {
           Create Product
         </Link>
 
-        <Link href="admin/products"
+        <Link href="/admin/products"
           className={buttonVariants()}>
           Manage products
         </Link>
@@ -35,4 +35,4 @@ async function HomePage() {
     </>
   )
 }
-export default HomePage 
+export default HomePage
