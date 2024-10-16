@@ -35,4 +35,4 @@ async function HomePage() {
     </>
   )
 }
-export default HomePage 
+export default HomePage

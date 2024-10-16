@@ -3,10 +3,10 @@ import { Inter as FontSans } from 'next/font/google'
 import { cn } from '@/lib/utils'
 import './globals.css'
 
-const fontSans = FontSans({
-  subsets: ['latin'],
-  variable: '--font-sans'
-})
+const fontSans = FontSans ({
+   subsets: ['latin'],
+   variable: '--font-sans'
+  })
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
+      <body 
         className={cn(
           'min-h-screen bg-background font-sans initialiased',
           fontSans.variable
