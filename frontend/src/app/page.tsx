@@ -16,9 +16,9 @@ async function HomePage() {
           Next Nest App
         </h1>
 
-        <Link href="/products/new"
+        <Link href="/admin/products"
           className={buttonVariants()}>
-          Create Product
+          Manage products
         </Link>
       </div>
 

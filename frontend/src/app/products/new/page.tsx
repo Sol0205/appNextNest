@@ -21,7 +21,7 @@ async function ProductsNewPage({ params }: Props) {
                         {params.id ? 'Edit Product' : 'Creation'}
                         <Link
                             className={buttonVariants()}
-                            href="/"
+                            href="/admin/products"
                         >
                             Go back
                         </Link>

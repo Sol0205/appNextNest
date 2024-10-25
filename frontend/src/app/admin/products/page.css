@@ -1,0 +1,45 @@
+.custom-table {
+    border-collapse: collapse;
+    width: 100%;
+    height: auto;
+}
+
+.custom-header,
+.custom-cell {
+    border: 1px solid #ccc;
+    padding: 0px;
+    text-align: center;
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.buttonEdit {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.buttonDelete {
+    background-color: #f44336;
+    color: white;
+}
+
+.buttonEdit:hover {
+    background-color: #45a049;
+}
+
+.buttonDelete:hover {
+    background-color: #d32f2f;
+}
+
+.custom-link-id-detail {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 12px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
