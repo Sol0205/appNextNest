@@ -53,5 +53,4 @@ async function ProductDetailPage({ params }: Props) {
         </div>
     )
 }
-
 export default ProductDetailPage
