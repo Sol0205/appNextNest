@@ -7,6 +7,7 @@ import Link from 'next/link'
 import { buttonVariants } from "@/components/ui/button"
 import { useRouter } from "next/navigation"
 import "./page.css";
+        
 
 interface Product {
     id: string;
@@ -121,3 +122,4 @@ export default function ProductsPage() {
         </>
     );
 }
+

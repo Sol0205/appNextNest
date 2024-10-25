@@ -8,9 +8,9 @@ import { createProduct, updateProduct } from '../products.api'
 import { useParams, useRouter } from 'next/navigation'
 
 
-export default function ProductForm({ product }: any) {
+export default function ProductForm({product}: any) {
     const { register, handleSubmit } = useForm({
-        defaultValues: {
+        defaultValues:{
             name: product?.name,
             description: product?.description,
             color: product?.color,
@@ -22,7 +22,7 @@ export default function ProductForm({ product }: any) {
         }
     })
     const router = useRouter()
-    const params = useParams<{ id: string }>()
+    const params = useParams<{id: string}>()
 
     const onSubmit = handleSubmit(async (data) => {
         if (params?.id) {
@@ -40,49 +40,49 @@ export default function ProductForm({ product }: any) {
         router.refresh()
     })
 
-    return (
+    return(
         <form onSubmit={onSubmit}>
             <Label> Product name </Label>
-            <Input
+            <Input 
                 {...register('name')}
             />
 
             <Label> Description </Label>
-            <Input
+            <Input 
                 {...register('description')}
             />
 
             <Label> Color </Label>
-            <Input
+            <Input 
                 {...register('color')}
             />
 
             <Label> Category </Label>
-            <Input
+            <Input 
                 {...register('category')}
             />
 
             <Label> Dimensions </Label>
-            <Input
+            <Input 
                 {...register('dimensions')}
             />
 
             <Label> Currency </Label>
-            <Input
+            <Input 
                 {...register('currency')}
             />
 
             <Label> Price </Label>
-            <Input type='number'
+            <Input type='number' 
                 {...register('price')}
             />
-
+                        
             <Label> Image </Label>
             <Input
                 {...register('image')}
             />
-
-            <Button>
+                        
+            <Button> 
                 {params.id ? 'update product' : 'Create product'}
             </Button>
         </form>
