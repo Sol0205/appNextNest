@@ -17,8 +17,6 @@ export default function ProductForm({product}: any) {
             category: product?.category,
             dimensions: product?.dimensions,
             currency: product?.currency,
-            // ERROR!! (No me deja agregarlo)
-            // quantity: product?.quantity,
             price: product?.price,
             image: product?.image
         }
@@ -38,7 +36,7 @@ export default function ProductForm({product}: any) {
                 price: parseFloat(data.price)
             })
         }
-        router.push('/')
+        router.push('/admin/products')
         router.refresh()
     })
 
@@ -73,11 +71,6 @@ export default function ProductForm({product}: any) {
             <Input 
                 {...register('currency')}
             />
-                
-            {/* <Label> Quantity </Label>
-            <Input 
-                {...register('quantity')}
-            /> */}
 
             <Label> Price </Label>
             <Input type='number' 

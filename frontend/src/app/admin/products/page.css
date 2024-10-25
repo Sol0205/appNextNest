@@ -1,27 +1,45 @@
 .custom-table {
-    width: 100%;
     border-collapse: collapse;
+    width: 100%;
+    height: auto;
 }
 
-.custom-header {
-    background-color: #d0d0d0;
-    text-align: center;
-    border-bottom: 1px solid #c4c4c4;
-    border: 1px solid #c4c4c4;
-}
-
+.custom-header,
 .custom-cell {
+    border: 1px solid #ccc;
+    padding: 0px;
     text-align: center;
-    border-bottom: 1px solid #c4c4c4;
-    border: 1px solid #c4c4c4;
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .buttonEdit {
-    border-radius: 8px;
-    background-color: #f5a524;
+    background-color: #4CAF50;
+    color: white;
 }
 
 .buttonDelete {
-    border-radius: 8px;
-    background-color: #ff0000;
+    background-color: #f44336;
+    color: white;
+}
+
+.buttonEdit:hover {
+    background-color: #45a049;
+}
+
+.buttonDelete:hover {
+    background-color: #d32f2f;
+}
+
+.custom-link-id-detail {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 12px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }

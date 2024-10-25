@@ -1,8 +1,9 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { getProduct } from "../products.api";
+import { getProduct } from "../../../products/products.api";
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
 import '../[id]/page.css'
+
 
 interface Props {
     params: {
@@ -23,7 +24,7 @@ async function ProductDetailPage({ params }: Props) {
                         Product detail: {product.id}
                         <Link
                             className={buttonVariants()}
-                            href="/"
+                            href="/admin/products"
                         >
                             Go back
                         </Link>
@@ -46,11 +47,12 @@ async function ProductDetailPage({ params }: Props) {
                         <span style={{ textDecoration: 'underline' }}>Precio:</span> {product.price}
                     </p>
                     <img src={product.image} alt=""
-                        className="w-full h-64 image"
+                        className="w-full h-64 object-cover image"
                     />
                 </CardContent>
             </Card>
         </div>
     )
 }
+
 export default ProductDetailPage

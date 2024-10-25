@@ -1,0 +1,7 @@
+.container-card {
+    max-width: 70%;
+    height: 50%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
