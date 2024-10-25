@@ -18,11 +18,6 @@ async function HomePage() {
           className={buttonVariants()}>
           Manage products
         </Link>
-
-        <Link href="/admin/products"
-          className={buttonVariants()}>
-          Manage products
-        </Link>
       </div>
 
       <div className="grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3">
