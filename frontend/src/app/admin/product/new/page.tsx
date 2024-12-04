@@ -1,19 +1,19 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import ProductForm from './product-form'
-import { getProduct } from '../products.api'
+import { getProduct } from '@/app/products/products.api';
 import Link from 'next/link'
 import { buttonVariants } from "@/components/ui/button";
 
-interface Props{
+interface Props {
     params: {
         id: string
     }
 }
 
-async function ProductsNewPage({params}: Props) {
+async function ProductsNewPage({ params }: Props) {
     const product = params.id ? await getProduct(params.id) : {}
 
-    return(
+    return (
         <div className='h-screen flex justify-center items-center'>
             <Card>
                 <CardHeader>
@@ -28,7 +28,7 @@ async function ProductsNewPage({params}: Props) {
                     </CardTitle>
                 </CardHeader>
                 <CardContent>
-                    <ProductForm product={product}/>
+                    <ProductForm product={product} />
                 </CardContent>
             </Card>
         </div>

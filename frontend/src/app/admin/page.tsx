@@ -47,7 +47,7 @@ export default function ProductsPage() {
                 Go back
             </Link>
 
-            <Link href="../../products/new"
+            <Link href="../../admin/product/new"
                 className={buttonVariants()}>
                 Create Product
             </Link>
