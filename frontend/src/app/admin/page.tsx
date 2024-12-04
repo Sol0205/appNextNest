@@ -1,13 +1,14 @@
 'use client'
 import { Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, Button } from "@nextui-org/react"
 import { useEffect, useState } from "react"
-import { deleteProduct, getProducts } from "../../products/products.api"
-import '../products/page.css'
+import { deleteProduct, getProducts } from "../products/products.api"
+import './page.css'
 import Link from 'next/link'
 import { buttonVariants } from "@/components/ui/button"
 import { useRouter } from "next/navigation"
 import "./page.css";
-        
+import NavBar from "../navBar/page"
+
 
 interface Product {
     id: string;
@@ -40,6 +41,7 @@ export default function ProductsPage() {
 
     return (
         <>
+            <NavBar />
             <Link href="/"
                 className={buttonVariants()}>
                 Go back

@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { getProduct } from "../../../products/products.api";
+import { getProduct } from "@/app/products/products.api";
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
 import '../[id]/page.css'
