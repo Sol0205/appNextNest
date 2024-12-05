@@ -68,32 +68,32 @@ export default function ProductsPage() {
                     {products.map((product) => (
                         <TableRow key={product.id}>
                             <TableCell className="custom-cell">
-                                <Link href={`/admin/products/${product.id}`} className="custom-link-id-detail">
+                                <Link href={`../admin/product/${product.id}/detail`} className="custom-link-id-detail">
                                     {product.name}
                                 </Link>
                             </TableCell>
                             <TableCell className="custom-cell">
-                                <Link href={`/admin/products/${product.id}`} className="custom-link-id-detail">
+                                <Link href={`../admin/product/${product.id}/detail`} className="custom-link-id-detail">
                                     {product.description}
                                 </Link>
                             </TableCell>
                             <TableCell className="custom-cell">
-                                <Link href={`/admin/products/${product.id}`} className="custom-link-id-detail">
+                                <Link href={`../admin/product/${product.id}/detail`} className="custom-link-id-detail">
                                     {product.color}
                                 </Link>
                             </TableCell>
                             <TableCell className="custom-cell">
-                                <Link href={`/admin/products/${product.id}`} className="custom-link-id-detail">
+                                <Link href={`../admin/product/${product.id}/detail`} className="custom-link-id-detail">
                                     {product.category}
                                 </Link>
                             </TableCell>
                             <TableCell className="custom-cell">
-                                <Link href={`/admin/products/${product.id}`} className="custom-link-id-detail">
+                                <Link href={`../admin/product/${product.id}/detail`} className="custom-link-id-detail">
                                     {product.dimensions}
                                 </Link>
                             </TableCell>
                             <TableCell className="custom-cell">
-                                <Link href={`/admin/products/${product.id}`} className="custom-link-id-detail">
+                                <Link href={`../admin/product/${product.id}/detail`} className="custom-link-id-detail">
                                     {product.price} {product.currency}
                                 </Link>
                             </TableCell>
