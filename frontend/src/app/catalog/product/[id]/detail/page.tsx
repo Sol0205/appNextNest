@@ -3,6 +3,7 @@ import { getProduct } from "@/app/products/products.api";
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
 import './page.css'
+import NavBar from "@/app/navBar/page";
 
 
 interface Props {
@@ -16,6 +17,7 @@ async function ProductDetailPage({ params }: Props) {
 
     return (
         <div className="flex justify-center items-center h-screen">
+            <NavBar />
             <Card
                 className="card-content"
             >
