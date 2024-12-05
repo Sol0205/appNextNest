@@ -24,7 +24,7 @@ async function ProductDetailPage({ params }: Props) {
                         Product detail: {product.id}
                         <Link
                             className={buttonVariants()}
-                            href="/admin/products"
+                            href="/admin"
                         >
                             Go back
                         </Link>
