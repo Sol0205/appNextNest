@@ -32,7 +32,7 @@ export default function NavBar() {
                             </button>
                         </NavbarItem>
                         <NavbarItem>
-                            <button onClick={() => handleClick("catalog")} className="nav-link">
+                            <button onClick={() => handleClick("../catalog")} className="nav-link">
                                 Catálogo
                             </button>
                         </NavbarItem>

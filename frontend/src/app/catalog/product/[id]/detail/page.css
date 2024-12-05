@@ -1,0 +1,10 @@
+.card-content {
+    margin-top: 50px;
+    width: 50%;
+    height: auto;
+    word-wrap: break-word;
+}
+
+.image {
+    height: auto;
+}
