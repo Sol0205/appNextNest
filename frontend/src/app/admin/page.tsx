@@ -101,7 +101,7 @@ export default function ProductsPage() {
                                 <Button className="buttonEdit"
                                     onClick={(e) => {
                                         e.stopPropagation()
-                                        router.push(`/products/${product.id}/edit`)
+                                        router.push(`../admin/product/${product.id}/edit`)
                                     }}
                                 >
                                     Editar
