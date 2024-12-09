@@ -37,7 +37,7 @@ export default function ProductForm({ product }: any) {
                 price: parseFloat(data.price)
             })
         }
-        router.push('/admin/products')
+        router.push('/admin')
         router.refresh()
     })
 
