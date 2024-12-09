@@ -7,7 +7,8 @@ interface Props {
 }
 
 export default async function ProductDetailPage({ params }: Props) {
-    const product = await getProduct(params.id);
+    const productId = params?.id
+    const product = await getProduct(productId)
 
     if (!product) {
         return <p>Product not found</p>;
