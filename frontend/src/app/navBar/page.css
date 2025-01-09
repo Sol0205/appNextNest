@@ -71,8 +71,13 @@ nav .dropdown-trigger {
     color: hsl(270 59.26% 57.65% / 1) !important;
 }
 
-.nav-link:active {
+/* .nav-link:active {
     color: hsl(270 59.26% 57.65% / 1) !important;
+} */
+
+.nav-link.active {
+    color: pink !important;
+    font-weight: bold;
 }
 
 .input-wrapper {

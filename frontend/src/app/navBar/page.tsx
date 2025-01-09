@@ -1,16 +1,25 @@
 "use client"
 
-import { Dropdown, DropdownItem, DropdownMenu, DropdownTrigger, Input, Navbar, NavbarBrand, NavbarContent, NavbarItem } from "@nextui-org/react";
+import {
+    Dropdown,
+    DropdownItem,
+    DropdownMenu,
+    DropdownTrigger,
+    Input,
+    Navbar,
+    NavbarBrand,
+    NavbarContent,
+    NavbarItem,
+} from "@nextui-org/react";
 import Link from "next/link";
 import { SearchIcon } from "./icon/searchIcon";
 import ProductsPage from "../admin/page";
 import "./page.css"
 import { useRouter } from 'next/navigation';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 export default function NavBar() {
     const [activePage, setActivePage] = useState<string>("");
-    const [isClient, setIsClient] = useState(false);
     const router = useRouter();
 
     const handleClick = (path: string) => {
@@ -21,24 +30,27 @@ export default function NavBar() {
     return (
         <div>
             <Navbar isBordered>
-                <NavbarContent>
+                <NavbarContent className="hidden sm:flex gap-4" justify="center">
                     <NavbarBrand className="nav-link">
                         <Link href="/" className="nav-link">LOGO</Link>
                     </NavbarBrand>
-                    <NavbarContent className="hidden sm:flex gap-4" justify="center">
-                        <NavbarItem>
-                            <button onClick={() => handleClick("./admin")} className="nav-link">
-                                Admin
-                            </button>
-                        </NavbarItem>
-                        <NavbarItem>
-                            <button onClick={() => handleClick("../catalog")} className="nav-link">
-                                Catálogo
-                            </button>
-                        </NavbarItem>
-                    </NavbarContent>
+                    <NavbarItem>
+                        <button
+                            onClick={() => handleClick("./admin")}
+                            className={`nav-link ${activePage === "./admin" ? "active" : ""}`}
+                        >
+                            Admin
+                        </button>
+                    </NavbarItem>
+                    <NavbarItem>
+                        <button
+                            onClick={() => handleClick("../catalog")}
+                            className={`nav-link ${activePage === "../catalog" ? "active" : ""}`}
+                        >
+                            Catálogo
+                        </button>
+                    </NavbarItem>
                 </NavbarContent>
-
                 <NavbarContent className="items-center" justify="end">
                     <Input
                         classNames={{
