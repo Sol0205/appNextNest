@@ -1,5 +1,5 @@
 import NavBar from "@/app/navBar/page";
-import ProductDetail from "@/components/product-detail";
+import ProductDetail from "@/components/product-detail-catalog";
 import { getProduct } from "@/app/products/products.api";
 
 interface Props {
