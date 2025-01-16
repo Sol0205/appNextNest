@@ -1,13 +1,14 @@
 'use client'
 import { Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, Button } from "@nextui-org/react"
 import { useEffect, useState } from "react"
-import { deleteProduct, getProducts } from "../../products/products.api"
-import '../products/page.css'
+import { deleteProduct, getProducts } from "../products/products.api"
+import './page.css'
 import Link from 'next/link'
 import { buttonVariants } from "@/components/ui/button"
 import { useRouter } from "next/navigation"
 import "./page.css";
-        
+import NavBar from "../navBar/page"
+
 
 interface Product {
     id: string;
@@ -40,12 +41,13 @@ export default function ProductsPage() {
 
     return (
         <>
+            <NavBar />
             <Link href="/"
                 className={buttonVariants()}>
                 Go back
             </Link>
 
-            <Link href="../../products/new"
+            <Link href="../../admin/product/new"
                 className={buttonVariants()}>
                 Create Product
             </Link>
@@ -66,32 +68,32 @@ export default function ProductsPage() {
                     {products.map((product) => (
                         <TableRow key={product.id}>
                             <TableCell className="custom-cell">
-                                <Link href={`/admin/products/${product.id}`} className="custom-link-id-detail">
+                                <Link href={`../admin/product/${product.id}/detail`} className="custom-link-id-detail">
                                     {product.name}
                                 </Link>
                             </TableCell>
                             <TableCell className="custom-cell">
-                                <Link href={`/admin/products/${product.id}`} className="custom-link-id-detail">
+                                <Link href={`../admin/product/${product.id}/detail`} className="custom-link-id-detail">
                                     {product.description}
                                 </Link>
                             </TableCell>
                             <TableCell className="custom-cell">
-                                <Link href={`/admin/products/${product.id}`} className="custom-link-id-detail">
+                                <Link href={`../admin/product/${product.id}/detail`} className="custom-link-id-detail">
                                     {product.color}
                                 </Link>
                             </TableCell>
                             <TableCell className="custom-cell">
-                                <Link href={`/admin/products/${product.id}`} className="custom-link-id-detail">
+                                <Link href={`../admin/product/${product.id}/detail`} className="custom-link-id-detail">
                                     {product.category}
                                 </Link>
                             </TableCell>
                             <TableCell className="custom-cell">
-                                <Link href={`/admin/products/${product.id}`} className="custom-link-id-detail">
+                                <Link href={`../admin/product/${product.id}/detail`} className="custom-link-id-detail">
                                     {product.dimensions}
                                 </Link>
                             </TableCell>
                             <TableCell className="custom-cell">
-                                <Link href={`/admin/products/${product.id}`} className="custom-link-id-detail">
+                                <Link href={`../admin/product/${product.id}/detail`} className="custom-link-id-detail">
                                     {product.price} {product.currency}
                                 </Link>
                             </TableCell>
@@ -99,7 +101,7 @@ export default function ProductsPage() {
                                 <Button className="buttonEdit"
                                     onClick={(e) => {
                                         e.stopPropagation()
-                                        router.push(`/products/${product.id}/edit`)
+                                        router.push(`../admin/product/${product.id}/edit`)
                                     }}
                                 >
                                     Editar

@@ -1,0 +1,82 @@
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+    border-bottom: 1px solid #333;
+    height: 65px;
+}
+
+nav .navbar-brand {
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+}
+
+nav .navbar-brand:hover {
+    text-decoration: none;
+}
+
+nav .navbar-content .navbar-item a {
+    color: rgb(0, 255, 162) !important;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease;
+}
+
+nav .navbar-content .navbar-item a:hover {
+    color: #1db954;
+}
+
+nav .navbar-content .navbar-item.isActive a {
+    color: #1db954;
+    font-weight: bold;
+}
+
+nav input[type="search"] {
+    background-color: hsl(240deg 3.03% 12.94%);
+    color: white;
+    border-radius: 13px;
+    padding: 0.5rem;
+}
+
+nav input[type="search"]::placeholder {
+    color: #888;
+}
+
+nav .dropdown-trigger {
+    display: flex;
+    align-items: center;
+    color: white;
+    cursor: pointer;
+}
+
+.nav-link {
+    color: white !important;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: hsl(270 59.26% 57.65% / 1) !important;
+}
+
+.nav-link:active {
+    color: hsl(270 59.26% 57.65% / 1) !important;
+}
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
