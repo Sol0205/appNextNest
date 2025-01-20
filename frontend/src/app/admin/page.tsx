@@ -1,5 +1,5 @@
 'use client'
-import { Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, Button, Input } from "@nextui-org/react"
+import { Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, Button } from "@nextui-org/react"
 import { useEffect, useState } from "react"
 import { deleteProduct, getProducts } from "../products/products.api"
 import './page.css'
