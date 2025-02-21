@@ -12,9 +12,7 @@ import {
     NavbarItem,
 } from "@nextui-org/react"
 import Link from "next/link"
-import { SearchIcon } from "./icon/searchIcon"
 import ProductsPage from "../admin/page"
-import "./page.css"
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 

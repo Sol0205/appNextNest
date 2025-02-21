@@ -19,7 +19,7 @@ import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 
 interface NavBarProps {
-    onSearch: (term: string) => void
+    onSearch?: (term: string) => void
 }
 
 export default function NavBar({ onSearch }: NavBarProps) {
@@ -69,7 +69,7 @@ export default function NavBar({ onSearch }: NavBarProps) {
                         size="sm"
                         startContent={<SearchIcon size={24} width={24} height={24} />}
                         type="search"
-                        onChange={(e) => onSearch(e.target.value)}
+                        onChange={(e) => onSearch?.(e.target.value)}
                     />
 
                     <Dropdown placement="bottom-end">

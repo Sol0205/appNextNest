@@ -7,8 +7,6 @@ import { useForm } from 'react-hook-form'
 import { createProduct, updateProduct } from '@/app/products/products.api'
 import { useParams, useRouter } from 'next/navigation'
 
-
-
 export default function ProductForm({ product }: any) {
     const { register, handleSubmit } = useForm({
         defaultValues: {
@@ -25,7 +23,11 @@ export default function ProductForm({ product }: any) {
     const router = useRouter()
     const params = useParams<{ id: string }>()
 
-    const onSubmit = handleSubmit(async (data) => {
+    const onSubmit = handleSubmit((data) => {
+        submitProductData(data)
+    })
+
+    const submitProductData = async (data: any) => {
         if (params?.id) {
             const res = await updateProduct(params.id, {
                 ...data,
@@ -39,7 +41,7 @@ export default function ProductForm({ product }: any) {
         }
         router.push('/admin')
         router.refresh()
-    })
+    }
 
     return (
         <form onSubmit={onSubmit}>

@@ -6,19 +6,19 @@ import './page.css'
 import Link from 'next/link'
 import { buttonVariants } from "@/components/ui/button"
 import { useRouter } from "next/navigation"
-import "./page.css";
+import "./page.css"
 import NavBar from "../navBar/page"
 
 
 interface Product {
-    id: string;
-    name: string;
-    description: string;
-    color: string;
-    category: string;
-    dimensions: string;
-    price: number;
-    currency: string;
+    id: number
+    name: string
+    description: string
+    color: string
+    category: string
+    dimensions: string
+    price: number
+    currency: string
 }
 
 export default function ProductsPage() {
@@ -26,8 +26,8 @@ export default function ProductsPage() {
     const [searchTerm, setSearchTerm] = useState<string>("")
     const router = useRouter()
 
-    async function handleRemoveProduct(id: string) {
-        await deleteProduct(id);
+    async function handleRemoveProduct(id: number) {
+        await deleteProduct(id.toString())
         setProducts((prevProducts) =>
             prevProducts.filter((product) => product.id !== id)
         )
@@ -114,7 +114,7 @@ export default function ProductsPage() {
                                     className="buttonEdit"
                                     onClick={(e) => {
                                         e.stopPropagation()
-                                        router.push(`../admin/product/${product.id}/edit`)
+                                        router.push(`../admin/product/${product.id.toString()}/edit`)
                                     }}
                                 >
                                     Editar
