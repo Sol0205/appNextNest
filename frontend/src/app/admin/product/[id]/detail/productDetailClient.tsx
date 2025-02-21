@@ -4,7 +4,7 @@ import { useParams } from "next/navigation"
 import ProductDetail from "@/components/product-detail"
 import { useEffect, useState } from "react"
 import { getProduct } from "@/app/products/products.api"
-import NavBarSinSearch from "@/app/navBarSinSearch/page"
+import NavBar from "@/app/navBar/page"
 
 export default function ProductDetailClient() {
     const params = useParams()
@@ -32,7 +32,7 @@ export default function ProductDetailClient() {
 
     return (
         <div className="flex flex-col justify-center items-center h-screen">
-            <NavBarSinSearch />
+            <NavBar />
             <ProductDetail product={product} />
         </div>
     )
