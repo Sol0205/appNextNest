@@ -3,7 +3,7 @@ import ProductForm from './product-form'
 import { getProduct } from '@/app/products/products.api';
 import Link from 'next/link'
 import { buttonVariants } from "@/components/ui/button";
-import NavBar from '@/app/navBar/page';
+import NavBarSinSearch from '@/app/navBarSinSearch/page';
 
 interface Props {
     params: {
@@ -16,7 +16,7 @@ async function ProductsNewPage({ params }: Props) {
 
     return (
         <div className='h-screen flex justify-center items-center'>
-            <NavBar />
+            <NavBarSinSearch />
             <Card>
                 <CardHeader>
                     <CardTitle className="flex justify-between">
