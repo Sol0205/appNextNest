@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import ProductForm from './product-form'
 import Link from 'next/link'
 import { buttonVariants } from "@/components/ui/button"
-import NavBarSinSearch from '@/app/navBarSinSearch/page'
+import NavBar from '@/app/navBar/page'
 
 type Params = {
     id: string
@@ -43,7 +43,7 @@ export default function ProductsEditPage({ params }: { params: Params }) {
 
     return (
         <div className='h-screen flex justify-center items-center'>
-            <NavBarSinSearch />
+            <NavBar />
             <Card>
                 <CardHeader>
                     <CardTitle className="flex justify-between">

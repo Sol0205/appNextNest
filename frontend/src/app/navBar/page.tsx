@@ -57,7 +57,7 @@ export default function NavBar({ onSearch }: NavBarProps) {
                 </NavbarContent>
 
                 <NavbarContent className="items-center" justify="end">
-                    <Input
+                    {onSearch && <Input
                         classNames={{
                             base: "max-w-full sm:max-w-[10rem] h-10",
                             mainWrapper: "h-full",
@@ -70,7 +70,7 @@ export default function NavBar({ onSearch }: NavBarProps) {
                         startContent={<SearchIcon size={24} width={24} height={24} />}
                         type="search"
                         onChange={(e) => onSearch?.(e.target.value)}
-                    />
+                    />}
 
                     <Dropdown placement="bottom-end">
                         <DropdownTrigger as={Link} href="#" className="nav-link">
