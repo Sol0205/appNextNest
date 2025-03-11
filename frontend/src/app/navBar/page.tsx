@@ -10,21 +10,25 @@ import {
     NavbarBrand,
     NavbarContent,
     NavbarItem,
-} from "@nextui-org/react";
-import Link from "next/link";
-import { SearchIcon } from "./icon/searchIcon";
-import ProductsPage from "../admin/page";
+} from "@nextui-org/react"
+import Link from "next/link"
+import { SearchIcon } from "./icon/searchIcon"
+import ProductsPage from "../admin/page"
 import "./page.css"
-import { useRouter } from 'next/navigation';
-import { useState } from 'react';
+import { useRouter } from 'next/navigation'
+import { useState } from 'react'
 
-export default function NavBar() {
-    const [activePage, setActivePage] = useState<string>("");
-    const router = useRouter();
+interface NavBarProps {
+    onSearch?: (term: string) => void
+}
+
+export default function NavBar({ onSearch }: NavBarProps) {
+    const [activePage, setActivePage] = useState<string>("")
+    const router = useRouter()
 
     const handleClick = (path: string) => {
-        setActivePage(path);
-        router.push(`/${path}`);
+        setActivePage(path)
+        router.push(`/${path}`)
     };
 
     return (
@@ -51,8 +55,9 @@ export default function NavBar() {
                         </button>
                     </NavbarItem>
                 </NavbarContent>
+
                 <NavbarContent className="items-center" justify="end">
-                    <Input
+                    {onSearch && <Input
                         classNames={{
                             base: "max-w-full sm:max-w-[10rem] h-10",
                             mainWrapper: "h-full",
@@ -64,7 +69,8 @@ export default function NavBar() {
                         size="sm"
                         startContent={<SearchIcon size={24} width={24} height={24} />}
                         type="search"
-                    />
+                        onChange={(e) => onSearch?.(e.target.value)}
+                    />}
 
                     <Dropdown placement="bottom-end">
                         <DropdownTrigger as={Link} href="#" className="nav-link">
@@ -94,5 +100,5 @@ export default function NavBar() {
                 {activePage === "catalog" && <h2>Catálogo de productos</h2>}
             </div>
         </div>
-    );
+    )
 }

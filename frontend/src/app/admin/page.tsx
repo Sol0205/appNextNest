@@ -6,49 +6,58 @@ import './page.css'
 import Link from 'next/link'
 import { buttonVariants } from "@/components/ui/button"
 import { useRouter } from "next/navigation"
-import "./page.css";
+import "./page.css"
 import NavBar from "../navBar/page"
 
 
 interface Product {
-    id: string;
-    name: string;
-    description: string;
-    color: string;
-    category: string;
-    dimensions: string;
-    price: number;
-    currency: string;
+    id: number
+    name: string
+    description: string
+    color: string
+    category: string
+    dimensions: string
+    price: number
+    currency: string
 }
 
 export default function ProductsPage() {
     const [products, setProducts] = useState<Product[]>([])
+    const [searchTerm, setSearchTerm] = useState<string>("")
     const router = useRouter()
 
-    async function handleRemoveProduct(id: string) {
-        await deleteProduct(id)
-        setProducts(prevProducts => prevProducts.filter(product => product.id !== id))
+    async function handleRemoveProduct(id: number) {
+        await deleteProduct(id.toString())
+        setProducts((prevProducts) =>
+            prevProducts.filter((product) => product.id !== id)
+        )
     }
 
     useEffect(() => {
         async function fetchProducts() {
             const data = await getProducts()
-            setProducts(data);
+            setProducts(data)
         }
 
         fetchProducts()
-    }, []);
+    }, [])
+
+    const filteredProducts = products.filter((product) =>
+        product.name.toLowerCase().includes(searchTerm.toLowerCase())
+    )
 
     return (
         <>
-            <NavBar />
+            <NavBar onSearch={(term) => setSearchTerm(term)} />
+
             <Link href="/"
                 className={buttonVariants()}>
                 Go back
             </Link>
 
             <Link href="../../admin/product/new"
-                className={buttonVariants()}>
+                className={buttonVariants()}
+            >
                 Create Product
             </Link>
 
@@ -65,10 +74,13 @@ export default function ProductsPage() {
                 </TableHeader>
 
                 <TableBody>
-                    {products.map((product) => (
+                    {filteredProducts.map((product) => (
                         <TableRow key={product.id}>
                             <TableCell className="custom-cell">
-                                <Link href={`../admin/product/${product.id}/detail`} className="custom-link-id-detail">
+                                <Link
+                                    href={`../admin/product/${product.id}/detail`}
+                                    className="custom-link-id-detail"
+                                >
                                     {product.name}
                                 </Link>
                             </TableCell>
@@ -98,17 +110,19 @@ export default function ProductsPage() {
                                 </Link>
                             </TableCell>
                             <TableCell className="custom-cell">
-                                <Button className="buttonEdit"
+                                <Button
+                                    className="buttonEdit"
                                     onClick={(e) => {
                                         e.stopPropagation()
-                                        router.push(`../admin/product/${product.id}/edit`)
+                                        router.push(`../admin/product/${product.id.toString()}/edit`)
                                     }}
                                 >
                                     Editar
                                 </Button>
                             </TableCell>
                             <TableCell className="custom-cell">
-                                <Button className="buttonDelete"
+                                <Button
+                                    className="buttonDelete"
                                     onClick={(e) => {
                                         e.stopPropagation()
                                         handleRemoveProduct(product.id)
@@ -122,6 +136,6 @@ export default function ProductsPage() {
                 </TableBody>
             </Table >
         </>
-    );
+    )
 }
 
